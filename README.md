@@ -3,7 +3,6 @@
 
 <p align="center"> Learning Parallel programing with MPI, Pthread and OpenMPI </p>
 
----
 <h2 align="center"> Algorithms Implementation </h2>
 
 ### MPI
