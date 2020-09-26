@@ -1,18 +1,16 @@
-# Parallel Programing
+<h1 align="center"> Parallel Programing </h1>
 
 
-    Learning Parallel programing with MPI, Pthread and OpenMPI
-    ---
+<p align="center"> Learning Parallel programing with MPI, Pthread and OpenMPI </p>
+
+---
+<h2 align="center"> Algorithms Implementation </h2>
 
 ### MPI
-[] trapeze area and pi generation algorithm
-[] Odd-even Transposition Sort
+[ ] Trapeze area and pi generation algorithm
+[ ] Odd-even Transposition Sort
 
 
 ### Pthread
-[] Square Matrix
-[] 
-
-
-### OpenMPI
-[] Square Matrix(FOR and TASKS)
+[ ] Square Matrix
+[ ] Odd-even Transposition Sort
