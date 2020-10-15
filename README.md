@@ -6,18 +6,18 @@
 
 ### MPI
 
-- [x] ()Trapeze area and pi generation algorithm
+- [x] [Trapeze area and Pi generation algorithm](https://github.com/duardopx/Parallel-programing/tree/master/MPI)
 
-- [] Odd-even Transposition Sort
+- [ ] Odd-even Transposition Sort
 
 
 ### Pthread
 
-- [] Square Matrix
+- [ ] Square Matrix
 
-- [] Odd-even Transposition Sort
+- [ ] Odd-even Transposition Sort
 
 ### OpenMPI
 
-- [] Square Matrix (**FOR** and **TASKS**)
+- [ ] Square Matrix (**FOR** and **TASKS**)
 
