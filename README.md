@@ -6,7 +6,7 @@
 
 ### MPI
 
-- [x] [Trapeze area and Pi generation algorithm](https://github.com/duardopx/Parallel-programing/tree/master/MPI)
+- [x] [ Trapezoidal rule  and Pi generation algorithm](https://github.com/duardopx/Parallel-programing/tree/master/MPI)
 
 - [ ] Odd-even Transposition Sort
 
