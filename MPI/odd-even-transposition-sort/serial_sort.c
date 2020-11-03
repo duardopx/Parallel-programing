@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <time.h>
+#include <stdbool.h>
 
 
 void swap(long * first, long * last)
@@ -14,44 +15,47 @@ void swap(long * first, long * last)
 void fill_array(long * array, long length)
 {
 	long i;
-	long dummy = length;
+	srand(1337);
 
-	for (i = 0x0; i <= length; ++i)
-		array[i] = dummy--;
+		for (i = 0x0; i < length; i++)
+			array[i] = rand() % length;
 }
+
 
 void print_array(long * array, long length)
 {
 	int i;
 
-	for (i = 0x0; i <= length; i++)
+	for (i = 0x0; i < length; i++)
 		printf("[%ld]", array[i]);
 
 	puts("");
 }
 
 
-void odd_even_sort(long * array,  long length)
+void odd_even_sort(long * array, long array_length)
 {
-	int i;
-	int phase;
+    int i;
+    int sorted = false;
 
-	for (phase = 0x0; phase <= length; phase++)
-	{
-		if ((phase % 0x2) == 0x0)
-		{
-			for (i = 0x1; i <= length; i += 0x2)
-				if (array[i - 0x1] > array[i])
-					swap(& array[i - 0x1], & array[i]);
-		}
+    while (sorted == false)
+    {
+        sorted = true;
 
-		else
-		{
-			for (i = 0x1; i <= (length - 0x1); i += 0x2)
-				if (array[i] > array[i + 0x1])
-					swap(& array[i], & array[i + 0x1]);
-		}
-	}
+        for (i = 1; i < array_length - 1; i += 2)
+            if (array[i] > array[i + 1])
+            {
+                swap(& array[i], & array[i + 0x1]);
+                sorted = false;
+            }
+
+        for (i = 0; i < array_length - 1; i += 2)
+            if (array[i] > array[i + 1])
+            {
+                swap(& array[i], & array[i + 0x1]);
+                sorted = 0;
+            }
+    }
 }
 
 
@@ -63,30 +67,22 @@ int main(int argc, char ** argv)
   	struct timeval start;
   	struct timeval stop;
 
-	FILE * searial_sort_output;
 
 	array_length = strtol(argv[0x1], NULL, 0xa);
 	array = malloc(sizeof(long) * (array_length + 0x1));
 
-
-	if ((searial_sort_output = fopen("serial_sort.csv", "a")) == NULL)
-	{
-		puts("> Erro on handling file");
-		exit(0x1);
-	}
+	printf("%ld", array_length);
 
 	fill_array(array, array_length);
 
+
 	gettimeofday(&start, 0x0);
-
 	odd_even_sort(array, array_length);
-
 	gettimeofday(&stop, 0x0);
 
-	fprintf(searial_sort_output, "\t %1.12f\n", (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec));
+	fprintf(stdout, "\t %2.7f\n", (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec));
 
 	free(array);
-	fclose(searial_sort_output);
 
 	return 0x0;
 }
