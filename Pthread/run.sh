@@ -27,7 +27,7 @@ remove_garbage()
 run_single_serial_code()
 {
   [[ "$1" == "sort" ]] && $_sort/"serial_sort" $2
-  [[ "$1" == "matrix" ]] && $matrix/"serial_square_matrix" $2 $3
+  [[ "$1" == "matrix" ]] && $matrix/"serial_square_matrix" $2 $3 $4
 }
 
 
@@ -45,7 +45,7 @@ compiling
 
 echo "[>] Run serial"
 echo ------------------------------
-run_single_serial_code matrix 10 10
+run_single_serial_code matrix 3 3 3 
 # run_single_parallel_code matrix  10
 
 remove_garbage
